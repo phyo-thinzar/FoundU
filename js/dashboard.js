@@ -99,6 +99,8 @@ async function loadRecentItems() {
             const item =
                 itemDoc.data();
 
+            item.id = itemDoc.id;
+
 
             console.log(
                 "Item:",
@@ -217,6 +219,40 @@ async function loadRecentItems() {
                 </div>
 
             `;
+
+// ========================================
+// CLICK RECENT ITEM
+// ========================================
+
+article.style.cursor = "pointer";
+
+article.onclick = function () {
+
+    console.log("================================");
+    console.log("🖱️ RECENT ITEM CLICKED");
+    console.log("Item name:", item.itemName);
+    console.log("Item ID:", item.id);
+    console.log("================================");
+
+    if (!item.id) {
+        console.error("❌ Item ID is missing!");
+        return;
+    }
+
+    // Save ID as backup
+    localStorage.setItem(
+        "selectedItemId",
+        item.id
+    );
+
+    // Open item details directly with ID
+    const detailsURL =
+        `item-details.html?id=${encodeURIComponent(item.id)}`;
+
+    console.log("➡️ Opening:", detailsURL);
+
+    window.location.assign(detailsURL);
+};
 
 
             // Add card to dashboard

@@ -92,6 +92,77 @@
     </main>
 
     
+<!-- ========================================
+     CONTACT REPORTER MODAL
+======================================== -->
+
+<div id="contact-modal" class="contact-modal">
+
+    <div class="contact-modal-content">
+
+        <!-- Modal Header -->
+        <div class="contact-modal-header">
+            <h2 data-i18n="chatWithReporter">
+                Contact Reporter
+            </h2>
+
+            <button
+                type="button"
+                id="close-contact-modal"
+                class="contact-modal-close"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+        </div>
+
+        <!-- Message -->
+        <div class="contact-modal-body">
+
+            <p
+                id="contact-reporter-name"
+                class="contact-reporter-name"
+            ></p>
+
+            <textarea
+                id="contact-message"
+                rows="5"
+                placeholder="Write your message..."
+                data-i18n-placeholder="writeMessage"
+            ></textarea>
+
+            <p
+                id="contact-modal-message"
+                class="form-message"
+            ></p>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="contact-modal-footer">
+
+            <button
+                type="button"
+                id="cancel-contact"
+                class="btn secondary-btn"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="send-message"
+                class="btn primary-btn"
+            >
+                Send Message
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 
     <!-- Mobile Navigation -->
 

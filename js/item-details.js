@@ -12,7 +12,12 @@ import {
 // GET SELECTED ITEM ID
 // ========================================
 
+const urlParams = new URLSearchParams(
+    window.location.search
+);
+
 const itemId =
+    urlParams.get("id") ||
     localStorage.getItem("selectedItemId");
 
 console.log("Selected item ID:", itemId);
@@ -173,7 +178,7 @@ async function loadItem(id) {
                 <h2>${t("failedToLoadItem")}</h2>
 
                 <p>
-                    &{t("tryAgain")}
+                    ${t("tryAgain")}
                 </p>
 
                 <a
