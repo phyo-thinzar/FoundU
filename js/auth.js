@@ -804,4 +804,5 @@ if (togglePassword && passwordInput) {
             isPassword ? "Hide password" : "Show password"
         );
     });
+
 }

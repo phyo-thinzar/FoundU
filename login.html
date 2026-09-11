@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,81 +15,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons-->
-     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
     <main class="auth-page">
         <div class="auth-container">
 
             <!--Back-->
-<a href="index.html" class="back-link" data-i18n="back">
-    Back
-</a>
+            <a href="index.html" class="back-link" data-i18n="back">
+                Back
+            </a>
 
-<!-- Hero Graphic Area -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <!-- Logo & Text Left -->
-                <div class="brand-header">
-                    <!-- <div class="brand-logo">
+            <!-- Hero Graphic Area -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <!-- Logo & Text Left -->
+                    <div class="brand-header">
+                        <!-- <div class="brand-logo">
                         <i class="fa-solid fa-location-dot logo-icon"></i>
                     </div> -->
-                    <div class="brand-title">
-                        <div class="brand-wrapper">
-                            <img src="images/logo.png" alt="Found You Logo" class="brand-logo">
-                        </div>
-                        
-                        <!-- <span class="sub-heading">KASEM BUNDIT UNIVERSITY</span>
+                        <div class="brand-title">
+                            <div class="brand-wrapper">
+                                <img src="images/logo.png" alt="Found You Logo" class="brand-logo">
+                            </div>
+
+                            <!-- <span class="sub-heading">KASEM BUNDIT UNIVERSITY</span>
                         <h1>Found <span class="highlight">You</span></h1>
                         <p class="tagline">discover <span class="dot">&rsaquo;</span> connect</p> 
                         <div class="green-line"></div>-->
+                        </div>
+                    </div>
+
+                    <!-- Building Photo Right with Diagonal Cut -->
+                    <div class="building-wrapper">
+                        <img src="images/kbu building.png" alt="Kasem Bundit University Building" class="building-img">
                     </div>
                 </div>
+            </section>
 
-                <!-- Building Photo Right with Diagonal Cut -->
-                <div class="building-wrapper">
-                    <img src="images/kbu building.png" alt="Kasem Bundit University Building" class="building-img">
-                </div>
-            </div>
-        </section>
-
-<!-- Auth Logo
+            <!-- Auth Logo
 <div class="auth-logo">
     FoundU
 </div> -->
 
-<!-- Heading -->
-<div class="auth-header">
-    <h1 data-i18n="welcomeBack">
-        Welcome Back 👋
-    </h1>
+            <!-- Heading -->
+            <div class="auth-header">
+                <h1 data-i18n="welcomeBack">
+                    Welcome Back 👋
+                </h1>
 
-    <p data-i18n="loginAccount">
-        Login to your FoundU account
-    </p>
-</div>
+                <p data-i18n="loginAccount">
+                    Login to your FoundU account
+                </p>
+            </div>
 
-<!-- Social Login -->
-<div class="social-login">
+            <!-- Social Login -->
+            <div class="social-login">
 
-    <button type="button" class="social-btn google-btn" id="google-login">
-        <span class="social-icon google-icon">G</span>
-        <span>Continue with Google</span>
-    </button>
+                <button type="button" class="social-btn google-btn" id="google-login">
+                    <span class="social-icon google-icon">G</span>
+                    <span>Continue with Google</span>
+                </button>
 
-    <!-- <button type="button" class="social-btn microsoft-btn" id="microsoft-login">
+                <!-- <button type="button" class="social-btn microsoft-btn" id="microsoft-login">
         <span class="social-icon microsoft-icon">⊞</span>
         <span>Continue with Microsoft</span>
     </button>
@@ -98,94 +96,73 @@
         <span>Continue with Apple</span>
     </button> -->
 
-</div>
+            </div>
 
-<!-- Divider -->
-<div class="auth-divider">
-    <span>OR</span>
-</div>
+            <!-- Divider -->
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
 
-<!-- Login Form -->
-<form class="auth-form" id="login-form">
+            <!-- Login Form -->
+            <form class="auth-form" id="login-form">
 
-    <!-- Email -->
-    <div class="form-group">
+                <!-- Email -->
+                <div class="form-group">
 
-        <label for="email" data-i18n="email">
-            Email
-        </label>
+                    <label for="email" data-i18n="email">
+                        Email
+                    </label>
 
-        <div class="input-wrapper">
+                    <div class="input-wrapper">
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                data-i18n-placeholder="enterEmail"
-                autocomplete="email"
-                required
-            >
+                        <input type="email" id="email" name="email" placeholder="Enter your email"
+                            data-i18n-placeholder="enterEmail" autocomplete="email" required>
 
-        </div>
+                    </div>
 
-    </div>
+                </div>
 
-    <!-- Password -->
-    <div class="form-group">
-    <label for="password" data-i18n="password">Password</label>
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password" data-i18n="password">Password</label>
 
-    <div class="password-wrapper">
-        <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            data-i18n-placeholder="enterPassword"
-            required
-        >
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            data-i18n-placeholder="enterPassword" required>
 
-        <button
-            type="button"
-            class="password-toggle"
-            id="toggle-password"
-            aria-label="Show password"
-        >
-            <i class="fa-solid fa-eye"></i>
-        </button>
-    </div>
-</div>
+                        <button type="button" class="password-toggle" id="toggle-password" aria-label="Show password">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
 
-    <!-- Error Message -->
-    <div id="login-message" class="auth-message"></div>
+                        <!-- Forgot Password -->
+                        <div class="forgot-password"> 
+                            <a href="#" id="forgot-password"> Forgot Password? </a> 
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Login Button -->
-    <button
-        type="submit"
-        class="btn primary-btn auth-btn"
-        id="login-btn"
-        data-i18n="login"
-    >
-        Login
-    </button>
+                <!-- Error Message -->
+                <div id="login-message" class="auth-message"></div>
 
-</form>
+                <!-- Login Button -->
+                <button type="submit" class="btn primary-btn auth-btn" id="login-btn" data-i18n="login">
+                    Login
+                </button>
 
-<!-- Register -->
-<p class="auth-footer">
+            </form>
 
-    <span data-i18n="dontHaveAccount">
-        Don't have an account?
-    </span>
+            <!-- Register -->
+            <p class="auth-footer">
 
-    <a
-        href="register.html"
-        data-i18n="createAccount"
-    >
-        Create Account
-    </a>
+                <span data-i18n="dontHaveAccount">
+                    Don't have an account?
+                </span>
 
-</p>
+                <a href="register.html" data-i18n="createAccount">
+                    Create Account
+                </a>
+
+            </p>
         </div>
     </main>
 
@@ -195,4 +172,5 @@
     <script src="js/language.js"></script>
     <script src="js/pwa.js"></script>
 </body>
+
 </html>
