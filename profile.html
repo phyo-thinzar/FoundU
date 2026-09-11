@@ -17,11 +17,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Back Button */
+        .back-button-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #245300;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #245300;
+            color: #ffffff;
+            transform: translateX(-2px);
+        }
+    </style>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
@@ -67,6 +94,13 @@
     <!-- Main -->
     <main class="profile-page">
 
+        <!-- Back Button -->
+        <div class="back-button-container">
+            <button type="button" class="back-button" onclick="history.back()">
+                ← <span data-i18n="back">Back</span>
+            </button>
+        </div>
+
         <!-- Page Header -->
         <section class="page-header">
 
@@ -106,80 +140,68 @@
         </section>
 
         <!-- Account Information -->
-<section class="profile-section">
+        <section class="profile-section">
 
-    <h2>Account Information</h2>
+            <h2>Account Information</h2>
 
-    <div class="profile-details">
+            <div class="profile-details">
 
-        <div class="profile-row">
-            <strong data-i18n="name">Name</strong>
+                <div class="profile-row">
+                    <strong data-i18n="name">Name</strong>
 
-            <span id="display-name">
-                Loading...
-            </span>
-        </div>
+                    <span id="display-name">
+                        Loading...
+                    </span>
+                </div>
 
-        <div class="profile-row">
-            <strong data-i18n="email">Email</strong>
+                <div class="profile-row">
+                    <strong data-i18n="email">Email</strong>
 
-            <span id="display-email">
-                Loading...
-            </span>
-        </div>
+                    <span id="display-email">
+                        Loading...
+                    </span>
+                </div>
 
-        <div class="profile-row">
-            <strong data-i18n="studentId">Student ID</strong>
+                <div class="profile-row">
+                    <strong data-i18n="studentId">Student ID</strong>
 
-            <span id="display-id">
-                Loading...
-            </span>
-        </div>
-
-
-    </div>
-
-</section>
+                    <span id="display-id">
+                        Loading...
+                    </span>
+                </div>
 
 
-<!-- Edit Profile -->
-<section class="profile-section">
+            </div>
 
-    <h2>Edit Profile</h2>
+        </section>
 
-    <div class="form-group">
 
-        <label for="edit-name" data-i18n="name">
-            Name
-        </label>
+        <!-- Edit Profile -->
+        <section class="profile-section">
 
-        <input
-            type="text"
-            id="edit-name"
-            placeholder="Enter your name"
-        >
+            <h2>Edit Profile</h2>
 
-    </div>
+            <div class="form-group">
 
-    <button
-        type="button"
-        id="save-profile"
-        class="btn primary-btn"
-    >
-        Save Changes
-    </button>
+                <label for="edit-name" data-i18n="name">
+                    Name
+                </label>
 
-</section>
+                <input type="text" id="edit-name" placeholder="Enter your name">
+
+            </div>
+
+            <button type="button" id="save-profile" class="btn primary-btn">
+                Save Changes
+            </button>
+
+        </section>
 
 
         <!-- Account Actions -->
         <section class="profile-actions">
 
-            <button
-                type="button"
-                id="logout-button"
-                class="btn delete-btn"
-             data-i18n="logout">
+            <button type="button" id="logout-button" class="btn delete-btn" data-i18n="logout">
                 Logout
             </button>
 
@@ -187,10 +209,7 @@
 
 
         <!-- Message -->
-        <p
-            id="profile-message"
-            class="form-message"
-        ></p>
+        <p id="profile-message" class="form-message"></p>
 
     </main>
 
@@ -214,10 +233,7 @@
         </a>
 
 
-        <a
-            href="profile.html"
-            class="active"
-         data-i18n="profile">
+        <a href="profile.html" class="active" data-i18n="profile">
             Profile
         </a>
 
@@ -225,10 +241,7 @@
 
 
     <!-- JavaScript -->
-    <script
-        type="module"
-        src="js/profile.js"
-    ></script>
+    <script type="module" src="js/profile.js"></script>
 
     <script src="js/language.js"></script>
     <script src="js/pwa.js"></script>

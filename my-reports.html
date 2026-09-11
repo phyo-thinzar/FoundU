@@ -20,7 +20,36 @@
 
 
     <!-- CSS -->
+    <style>
+        /* Back Button */
+        .back-button-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #245300;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #245300;
+            color: #ffffff;
+            transform: translateX(-2px);
+        }
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -68,7 +97,11 @@
 
     <main class="reports-page">
 
-
+        <div class="back-button-container">
+            <button type="button" class="back-button" onclick="history.back()">
+                ← <span data-i18n="back">Back</span>
+            </button>
+        </div>
         <!-- Header -->
 
         <section class="page-header">
@@ -89,23 +122,15 @@
 
         <div class="report-tabs">
 
-            <button type = "button"
-            class="report-tab active" 
-            id="all-tab" data-i18n="all">
+            <button type="button" class="report-tab active" id="all-tab" data-i18n="all">
                 All
             </button>
 
-            <button 
-            type="button"
-            class="report-tab"
-            id="lost-tab" data-i18n="lost">
+            <button type="button" class="report-tab" id="lost-tab" data-i18n="lost">
                 Lost
             </button>
 
-            <button 
-            type="button"
-            class="report-tab"
-            id="found-tab" data-i18n="found">
+            <button type="button" class="report-tab" id="found-tab" data-i18n="found">
                 Found
             </button>
 
@@ -115,7 +140,7 @@
 
         <!-- Reports -->
 
-        <section id = "my-report-list" class="my-report-list">
+        <section id="my-report-list" class="my-report-list">
             <p>Loading your reports...</p>
         </section>
 

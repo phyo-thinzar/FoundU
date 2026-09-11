@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages - FoundU</title>
+
+    <!--CSS-->
+    <style>
+    /* Back Button */
+        .back-button-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #245300;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #245300;
+            color: #ffffff;
+            transform: translateX(-2px);
+        }
+</style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -22,6 +54,12 @@
 </header>
 
 <main class="chat-list-page">
+
+    <!--Back button-->
+            <div class="back-button-container">
+            <button type="button" class="back-button" onclick="history.back()">
+                ← <span data-i18n="back">Back</span>
+            </button>
     <section class="chat-list-container">
         <h1 data-i18n="messages">Messages</h1>
         <p class="page-description" data-i18n="messagesDescription">Chat directly with other FoundU users. No email is needed.</p>

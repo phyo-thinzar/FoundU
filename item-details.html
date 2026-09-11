@@ -19,7 +19,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
+<style>
+    /* Back Button */
+        .back-button-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #245300;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #245300;
+            color: #ffffff;
+            transform: translateX(-2px);
+        }
+</style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -59,9 +88,11 @@
     <!-- Main -->
     <main class="item-details-page">
         <!-- Back -->
-        <a href="search.html" class="back-link">
-            <span data-i18n="backToSearch">Back to Search</span> 
-        </a>
+        <div class="back-button-container">
+            <button type="button" class="back-button" onclick="history.back()">
+                ← <span data-i18n="back">Back</span>
+            </button>
+        </div>
 
         <!-- Message -->
         <p id="details-message" class="form-message"></p>
