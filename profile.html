@@ -1,26 +1,69 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#245300">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="images/icon-192.png">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <meta name="theme-color"
+          content="#245300">
+
+    <meta name="mobile-web-app-capable"
+          content="yes">
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="default">
+
+    <link rel="apple-touch-icon"
+          href="images/icon-192.png">
 
     <title>FoundU - Profile</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/components.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <!-- Profile Page Custom CSS -->
 
     <style>
-        /* Back Button */
+
+        /* ========================================
+           BACK BUTTON
+        ======================================== */
+
         .back-button-container {
             width: 100%;
             margin-bottom: 20px;
@@ -30,58 +73,100 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+
             padding: 10px 16px;
+
             border: 1px solid #dbeafe;
             border-radius: 8px;
+
             background: #ffffff;
             color: #245300;
+
             font-family: "Poppins", sans-serif;
             font-size: 14px;
             font-weight: 500;
+
+            text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.08);
+
             transition: 0.2s ease;
         }
 
         .back-button:hover {
             background: #245300;
             color: #ffffff;
+
             transform: translateX(-2px);
         }
+
+
+        /* ========================================
+           PASSWORD MESSAGE
+        ======================================== */
+
+        #password-message {
+            margin-top: 12px;
+        }
+
+        #password-message.success {
+            color: #245300;
+        }
+
     </style>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+
     <header>
 
         <nav class="navbar">
 
-            <a href="dashboard.html" class="logo">
+            <a href="dashboard.html"
+               class="logo">
+
                 FoundU
+
             </a>
+
 
             <div class="nav-links">
 
-                <a href="dashboard.html" data-i18n="home">
+                <a href="dashboard.html"
+                   data-i18n="home">
+
                     Home
+
                 </a>
 
-                <a href="search.html" data-i18n="search">
+                <a href="search.html"
+                   data-i18n="search">
+
                     Search
+
                 </a>
 
-                <a href="my-reports.html" data-i18n="myReportsTitle">
+                <a href="my-reports.html"
+                   data-i18n="myReportsTitle">
+
                     My Reports
+
                 </a>
 
-                <a href="profile.html" data-i18n="profile">
+                <a href="profile.html"
+                   data-i18n="profile">
+
                     Profile
+
                 </a>
 
             </div>
@@ -91,17 +176,37 @@
     </header>
 
 
-    <!-- Main -->
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
     <main class="profile-page">
 
-        <!-- Back Button -->
+
+        <!-- ========================================
+             BACK BUTTON
+        ======================================== -->
+
         <div class="back-button-container">
-            <button type="button" class="back-button" onclick="history.back()">
-                ← <span data-i18n="back">Back</span>
-            </button>
+
+            <a href="dashboard.html"
+               class="back-button">
+
+                ←
+
+                <span data-i18n="back">
+                    Back
+                </span>
+
+            </a>
+
         </div>
 
-        <!-- Page Header -->
+
+        <!-- ========================================
+             PAGE HEADER
+        ======================================== -->
+
         <section class="page-header">
 
             <h1 data-i18n="profileTitle">
@@ -115,16 +220,20 @@
         </section>
 
 
-        <!-- Profile Card -->
+        <!-- ========================================
+             PROFILE CARD
+        ======================================== -->
+
         <section class="profile-card">
 
-            <!-- Avatar -->
-            <div class="profile-avatar" id="profile-avatar">
+            <div
+                class="profile-avatar"
+                id="profile-avatar"
+            >
                 ?
             </div>
 
 
-            <!-- User Information -->
             <div class="profile-info">
 
                 <h2 id="profile-name">
@@ -139,112 +248,280 @@
 
         </section>
 
-        <!-- Account Information -->
+
+        <!-- ========================================
+             ACCOUNT INFORMATION
+        ======================================== -->
+
         <section class="profile-section">
 
-            <h2>Account Information</h2>
+            <h2>
+                Account Information
+            </h2>
+
 
             <div class="profile-details">
 
+
                 <div class="profile-row">
-                    <strong data-i18n="name">Name</strong>
+
+                    <strong data-i18n="name">
+                        Name
+                    </strong>
 
                     <span id="display-name">
                         Loading...
                     </span>
+
                 </div>
 
+
                 <div class="profile-row">
-                    <strong data-i18n="email">Email</strong>
+
+                    <strong data-i18n="email">
+                        Email
+                    </strong>
 
                     <span id="display-email">
                         Loading...
                     </span>
+
                 </div>
 
+
                 <div class="profile-row">
-                    <strong data-i18n="studentId">Student ID</strong>
+
+                    <strong data-i18n="studentId">
+                        Student ID
+                    </strong>
 
                     <span id="display-id">
                         Loading...
                     </span>
-                </div>
 
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- Edit Profile -->
+        <!-- ========================================
+             EDIT PROFILE
+        ======================================== -->
+
         <section class="profile-section">
 
-            <h2>Edit Profile</h2>
+            <h2>
+                Edit Profile
+            </h2>
+
 
             <div class="form-group">
 
-                <label for="edit-name" data-i18n="name">
+                <label
+                    for="edit-name"
+                    data-i18n="name"
+                >
                     Name
                 </label>
 
-                <input type="text" id="edit-name" placeholder="Enter your name">
+
+                <input
+                    type="text"
+                    id="edit-name"
+                    placeholder="Enter your name"
+                >
 
             </div>
 
-            <button type="button" id="save-profile" class="btn primary-btn">
+
+            <button
+                type="button"
+                id="save-profile"
+                class="btn primary-btn"
+            >
                 Save Changes
             </button>
 
         </section>
 
 
-        <!-- Account Actions -->
+        <!-- ========================================
+             CHANGE PASSWORD
+        ======================================== -->
+
+        <section class="profile-section">
+
+            <h2>
+                Change Password
+            </h2>
+
+
+            <div class="form-group">
+
+                <label for="current-password">
+                    Current Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="current-password"
+                    placeholder="Enter your current password"
+                    autocomplete="current-password"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="new-password">
+                    New Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="new-password"
+                    placeholder="Enter your new password"
+                    autocomplete="new-password"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirm-password">
+                    Confirm New Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    placeholder="Confirm your new password"
+                    autocomplete="new-password"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                id="change-password"
+                class="btn primary-btn"
+            >
+                Change Password
+            </button>
+
+
+            <p
+                id="password-message"
+                class="form-message"
+            ></p>
+
+        </section>
+
+
+        <!-- ========================================
+             ACCOUNT ACTIONS
+        ======================================== -->
+
         <section class="profile-actions">
 
-            <button type="button" id="logout-button" class="btn delete-btn" data-i18n="logout">
+            <button
+                type="button"
+                id="logout-button"
+                class="btn delete-btn"
+                data-i18n="logout"
+            >
                 Logout
             </button>
 
         </section>
 
 
-        <!-- Message -->
-        <p id="profile-message" class="form-message"></p>
+        <!-- ========================================
+             PROFILE MESSAGE
+        ======================================== -->
+
+        <p
+            id="profile-message"
+            class="form-message"
+        ></p>
 
     </main>
 
 
-    <!-- Mobile Navigation -->
+    <!-- ========================================
+         MOBILE NAVIGATION
+    ======================================== -->
+
     <nav class="bottom-nav">
 
-        <a href="dashboard.html" data-i18n="home">
+        <a href="dashboard.html"
+           data-i18n="home">
+
             Home
+
         </a>
 
-        <a href="search.html" data-i18n="search">
+
+        <a href="search.html"
+           data-i18n="search">
+
             Search
+
         </a>
+
 
         <a href="my-reports.html">
+
             Reports
+
         </a>
-        <a href="chats.html" data-i18n="messages">
+
+
+        <a href="chats.html"
+           data-i18n="messages">
+
             Messages
+
         </a>
 
 
-        <a href="profile.html" class="active" data-i18n="profile">
+        <a href="profile.html"
+           class="active"
+           data-i18n="profile">
+
             Profile
+
         </a>
 
     </nav>
 
 
-    <!-- JavaScript -->
-    <script type="module" src="js/profile.js"></script>
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
 
-    <script src="js/language.js"></script>
-    <script src="js/pwa.js"></script>
+    <script
+        type="module"
+        src="js/profile.js">
+    </script>
+
+    <script
+        src="js/language.js">
+    </script>
+
+    <script
+        src="js/pwa.js">
+    </script>
+
 </body>
 
 </html>
+```

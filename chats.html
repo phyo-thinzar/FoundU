@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 
     <!--CSS-->
     <style>
-    /* Back Button */
+        /* Back Button */
         .back-button-container {
             width: 100%;
             margin-bottom: 20px;
@@ -35,50 +36,61 @@
             color: #ffffff;
             transform: translateX(-2px);
         }
-</style>
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/chat.css">
 </head>
+
 <body>
-<header>
-    <nav class="navbar">
-        <a href="dashboard.html" class="logo">FoundU</a>
-        <div class="nav-links">
-            <a href="dashboard.html" data-i18n="home">Home</a>
-            <a href="search.html" data-i18n="search">Search</a>
-            <a href="profile.html" data-i18n="profile">Profile</a>
+    <header>
+        <nav class="navbar">
+            <a href="dashboard.html" class="logo">FoundU</a>
+            <div class="nav-links">
+                <a href="dashboard.html" data-i18n="home">Home</a>
+                <a href="search.html" data-i18n="search">Search</a>
+                <a href="profile.html" data-i18n="profile">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chat-list-page">
+
+        <!--Back button-->
+        <div class="back-button-container">
+
+            <a href="dashboard.html" class="back-button">
+
+                ←
+                <span data-i18n="back">
+                    Back
+                </span>
+
+            </a>
+
         </div>
+        <section class="chat-list-container">
+            <h1 data-i18n="messages">Messages</h1>
+            <p class="page-description" data-i18n="messagesDescription">Chat directly with other FoundU users. No email
+                is needed.</p>
+            <div id="chat-list">
+                <p class="form-message" data-i18n="loadingMessages">Loading messages...</p>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="dashboard.html" data-i18n="home">Home</a>
+        <a href="search.html" data-i18n="search">Search</a>
+        <a href="chats.html" class="active" data-i18n="messages">Messages</a>
+        <a href="profile.html" data-i18n="profile">Profile</a>
     </nav>
-</header>
 
-<main class="chat-list-page">
-
-    <!--Back button-->
-            <div class="back-button-container">
-            <button type="button" class="back-button" onclick="history.back()">
-                ← <span data-i18n="back">Back</span>
-            </button>
-    <section class="chat-list-container">
-        <h1 data-i18n="messages">Messages</h1>
-        <p class="page-description" data-i18n="messagesDescription">Chat directly with other FoundU users. No email is needed.</p>
-        <div id="chat-list">
-            <p class="form-message" data-i18n="loadingMessages">Loading messages...</p>
-        </div>
-    </section>
-</main>
-
-<nav class="bottom-nav">
-    <a href="dashboard.html" data-i18n="home">Home</a>
-    <a href="search.html" data-i18n="search">Search</a>
-    <a href="chats.html" class="active" data-i18n="messages">Messages</a>
-    <a href="profile.html" data-i18n="profile">Profile</a>
-</nav>
-
-<script src="js/scripts.js"></script>
-<script type="module" src="js/chats.js"></script>
-<script src="js/language.js"></script>
-<script src="js/pwa.js"></script>
+    <script src="js/scripts.js"></script>
+    <script type="module" src="js/chats.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/pwa.js"></script>
 </body>
+
 </html>
