@@ -2,11 +2,14 @@
 console.log("Item Details JS is running!");
 
 import { auth, db } from "./firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 import {
     doc,
     getDoc
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+
+let currentLoadedItem = null;
 
 // ========================================
 // GET SELECTED ITEM ID
@@ -163,6 +166,7 @@ async function loadItem(id) {
         // DISPLAY ITEM
         // ========================================
 
+        currentLoadedItem = item;
         displayItem(item);
 
     } catch (error) {
@@ -392,6 +396,17 @@ function displayItem(item) {
                         ${t("chatWithReporter")}
                     </button>
                 `
+                : reporterId && reporterId === auth.currentUser?.uid
+                ? `
+                    <a
+                        href="chats.html"
+                        class="btn secondary-btn contact-btn"
+                        style="display: flex; align-items: center; justify-content: center; text-decoration: none;"
+                        data-i18n="messages"
+                    >
+                        ${t("messages")}
+                    </a>
+                `
                 : `
                     <p class="form-message">
                         ${t("chatUnavailable")}
@@ -555,3 +570,9 @@ function escapeHTML(text) {
 
     return div.innerHTML;
 }
+
+onAuthStateChanged(auth, () => {
+    if (currentLoadedItem) {
+        displayItem(currentLoadedItem);
+    }
+});

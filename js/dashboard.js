@@ -255,6 +255,27 @@ article.onclick = function () {
 };
 
 
+            // ========================================
+            // CLICK CARD
+            // ========================================
+
+            article.style.cursor = "pointer";
+
+            article.addEventListener(
+                "click",
+                () => {
+
+                    localStorage.setItem(
+                        "selectedItemId",
+                        itemDoc.id
+                    );
+
+                    window.location.href =
+                        "item-details.html";
+                }
+            );
+
+
             // Add card to dashboard
             recentItemsContainer.appendChild(
                 article

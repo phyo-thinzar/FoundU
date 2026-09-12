@@ -1,4 +1,4 @@
-const CACHE_NAME = "foundu-v1";
+const CACHE_NAME = "foundu-v2";
 
 const APP_SHELL = [
   "./",
@@ -9,6 +9,7 @@ const APP_SHELL = [
   "./search.html",
   "./item-details.html",
   "./my-reports.html",
+  "./chats.html",
   "./profile.html",
   "./report-lost.html",
   "./report-found.html",
@@ -24,6 +25,7 @@ const APP_SHELL = [
   "./js/dashboard.js",
   "./js/item-details.js",
   "./js/my-reports.js",
+  "./js/chats.js",
   "./js/profile.js",
   "./js/report-found.js",
   "./js/report-lost.js",
@@ -63,8 +65,13 @@ self.addEventListener("fetch", (event) => {
   // Let Firebase, Google Fonts, Font Awesome, Cloudinary, etc. use the network.
   if (new URL(request.url).origin !== self.location.origin) return;
 
-  // Network-first for HTML so users receive the newest page when online.
-  if (request.mode === "navigate" || request.destination === "document") {
+  // Network-first for HTML and JavaScript so users receive updates immediately when online.
+  if (
+    request.mode === "navigate" ||
+    request.destination === "document" ||
+    request.destination === "script" ||
+    request.url.endsWith(".js")
+  ) {
     event.respondWith(
       fetch(request)
         .then((response) => {
@@ -72,12 +79,12 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           return response;
         })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match("./index.html")))
+        .catch(() => caches.match(request).then((cached) => cached || (request.destination === "document" ? caches.match("./index.html") : undefined)))
     );
     return;
   }
 
-  // Cache-first for local static assets.
+  // Cache-first for other static assets (images, fonts, css).
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;

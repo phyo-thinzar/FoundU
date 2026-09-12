@@ -20,6 +20,9 @@ const searchButton =
 const categoryFilter =
     document.getElementById("category-filter");
 
+const typeFilter =
+    document.getElementById("type-filter");
+
 const statusFilter =
     document.getElementById("status-filter");
 
@@ -36,6 +39,7 @@ const searchMessage =
 console.log("Search input:", searchInput);
 console.log("Search button:", searchButton);
 console.log("Category filter:", categoryFilter);
+console.log("Type filter:", typeFilter);
 console.log("Status filter:", statusFilter);
 console.log("Location filter:", locationFilter);
 console.log("Results container:", resultsContainer);
@@ -49,6 +53,7 @@ if (
     !searchInput ||
     !searchButton ||
     !categoryFilter ||
+    !typeFilter ||
     !statusFilter ||
     !locationFilter ||
     !resultsContainer
@@ -98,7 +103,7 @@ async function loadItems() {
             allItems
         );
 
-        displayItems(allItems);
+        filterItems();
 
     } catch (error) {
 
@@ -205,6 +210,11 @@ function displayItems(items) {
                         item.type || "unknown"
                     )}
                 </span>
+                ${
+                    (item.status || "active").toLowerCase() === "resolved"
+                        ? `<span class="item-status resolved">${typeof t === "function" ? t("resolved", "Resolved") : "Resolved"}</span>`
+                        : ""
+                }
 
                 <h3>
                     ${escapeHTML(
@@ -314,9 +324,16 @@ function filterItems() {
             .toLowerCase();
 
 
+    const type =
+        typeFilter
+            ? typeFilter.value.toLowerCase()
+            : "all";
+
+
     const status =
-        statusFilter.value
-            .toLowerCase();
+        statusFilter
+            ? statusFilter.value.toLowerCase()
+            : "all";
 
 
     const location =
@@ -327,6 +344,7 @@ function filterItems() {
     console.log("Searching:", {
         searchText,
         category,
+        type,
         status,
         location
     });
@@ -352,6 +370,11 @@ function filterItems() {
 
             const itemType =
                 (item.type || "")
+                    .toLowerCase();
+
+
+            const itemStatus =
+                (item.status || "active")
                     .toLowerCase();
 
 
@@ -383,9 +406,18 @@ function filterItems() {
             // TYPE
             // ========================================
 
+            const matchesType =
+                type === "all" ||
+                itemType === type;
+
+
+            // ========================================
+            // STATUS
+            // ========================================
+
             const matchesStatus =
                 status === "all" ||
-                itemType === status;
+                itemStatus === status;
 
 
             // ========================================
@@ -400,6 +432,7 @@ function filterItems() {
             return (
                 matchesSearch &&
                 matchesCategory &&
+                matchesType &&
                 matchesStatus &&
                 matchesLocation
             );
@@ -485,13 +518,27 @@ categoryFilter.addEventListener(
 
 
 // ========================================
+// TYPE FILTER
+// ========================================
+
+if (typeFilter) {
+    typeFilter.addEventListener(
+        "change",
+        filterItems
+    );
+}
+
+
+// ========================================
 // STATUS FILTER
 // ========================================
 
-statusFilter.addEventListener(
-    "change",
-    filterItems
-);
+if (statusFilter) {
+    statusFilter.addEventListener(
+        "change",
+        filterItems
+    );
+}
 
 
 // ========================================
@@ -535,7 +582,31 @@ function escapeHTML(text) {
 
 
 // ========================================
+// URL PARAMETERS
+// ========================================
+
+function applyURLFilters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get("category");
+
+    if (categoryParam && categoryFilter) {
+        const matchingOption = Array.from(categoryFilter.options).find(
+            (opt) => opt.value.toLowerCase() === categoryParam.toLowerCase()
+        );
+        if (matchingOption) {
+            categoryFilter.value = matchingOption.value;
+        }
+    }
+}
+
+window.addEventListener("popstate", () => {
+    applyURLFilters();
+    filterItems();
+});
+
+// ========================================
 // START
 // ========================================
 
+applyURLFilters();
 loadItems();

@@ -712,6 +712,13 @@ function handleAuthError(error) {
             message
         );
 
+    } else if (document.getElementById("register-message")) {
+
+        showMessage(
+            "register-message",
+            message
+        );
+
     } else {
 
         alert(message);
