@@ -1,6 +1,6 @@
 {
-  "name": "FoundU - Campus Lost & Found",
-  "short_name": "FoundU",
+  "name": "Found You - Campus Lost & Found",
+  "short_name": "Found YOu",
   "description": "A campus lost and found app for students to report, search, and reconnect lost items.",
   "start_url": "./index.html",
   "scope": "./",
