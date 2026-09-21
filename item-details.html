@@ -19,8 +19,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-<style>
-    /* Back Button */
+    <style>
+
+        .details-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .details-image img,
+        .details-image-placeholder {
+            width: 450px;
+            height: 450px;
+            max-width: 100%;
+            border-radius: 14px;
+        }
+
+        .details-image img {
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .details-image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-color);
+            text-align: center;
+        }
+        /* Back Button */
         .back-button-container {
             width: 100%;
             margin-bottom: 20px;
@@ -49,35 +78,8 @@
             transform: translateX(-2px);
         }
 
-        .details-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.details-image img,
-.details-image-placeholder {
-    width: 450px;
-    height: 450px;
-    max-width: 100%;
-    border-radius: 14px;
-}
-
-.details-image img {
-    display: block;
-    object-fit: cover;
-    object-position: center;
-}
-
-.details-image-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--secondary-color);
-    text-align: center;
-}
-</style>
+        
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -155,77 +157,54 @@
         </section>
     </main>
 
-    
-<!-- ========================================
+
+    <!-- ========================================
      CONTACT REPORTER MODAL
 ======================================== -->
 
-<div id="contact-modal" class="contact-modal">
+    <div id="contact-modal" class="contact-modal">
 
-    <div class="contact-modal-content">
+        <div class="contact-modal-content">
 
-        <!-- Modal Header -->
-        <div class="contact-modal-header">
-            <h2 data-i18n="chatWithReporter">
-                Contact Reporter
-            </h2>
+            <!-- Modal Header -->
+            <div class="contact-modal-header">
+                <h2 data-i18n="chatWithReporter">
+                    Contact Reporter
+                </h2>
 
-            <button
-                type="button"
-                id="close-contact-modal"
-                class="contact-modal-close"
-                aria-label="Close"
-            >
-                &times;
-            </button>
-        </div>
+                <button type="button" id="close-contact-modal" class="contact-modal-close" aria-label="Close">
+                    &times;
+                </button>
+            </div>
 
-        <!-- Message -->
-        <div class="contact-modal-body">
+            <!-- Message -->
+            <div class="contact-modal-body">
 
-            <p
-                id="contact-reporter-name"
-                class="contact-reporter-name"
-            ></p>
+                <p id="contact-reporter-name" class="contact-reporter-name"></p>
 
-            <textarea
-                id="contact-message"
-                rows="5"
-                placeholder="Write your message..."
-                data-i18n-placeholder="writeMessage"
-            ></textarea>
+                <textarea id="contact-message" rows="5" placeholder="Write your message..."
+                    data-i18n-placeholder="writeMessage"></textarea>
 
-            <p
-                id="contact-modal-message"
-                class="form-message"
-            ></p>
+                <p id="contact-modal-message" class="form-message"></p>
 
-        </div>
+            </div>
 
-        <!-- Modal Footer -->
-        <div class="contact-modal-footer">
+            <!-- Modal Footer -->
+            <div class="contact-modal-footer">
 
-            <button
-                type="button"
-                id="cancel-contact"
-                class="btn secondary-btn"
-            >
-                Cancel
-            </button>
+                <button type="button" id="cancel-contact" class="btn secondary-btn">
+                    Cancel
+                </button>
 
-            <button
-                type="button"
-                id="send-message"
-                class="btn primary-btn"
-            >
-                Send Message
-            </button>
+                <button type="button" id="send-message" class="btn primary-btn">
+                    Send Message
+                </button>
+
+            </div>
 
         </div>
 
     </div>
-
-</div>
 
 
     <!-- Mobile Navigation -->
