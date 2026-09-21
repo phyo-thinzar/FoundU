@@ -850,6 +850,8 @@
     align-items: flex-start;
 
     justify-content: center;
+    
+    object-fit: cover;
 
 }
 
@@ -2854,4 +2856,32 @@
 
 .forgot-password a:hover {
     text-decoration: underline;
+}
+.details-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-image img,
+.details-image-placeholder {
+    width: 450px;
+    height: 450px;
+    max-width: 100%;
+    border-radius: 14px;
+}
+
+.details-image img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.details-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-color);
+    text-align: center;
 }
